@@ -40,10 +40,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  [   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |LCTRL |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |;/RISE|  '   |
- * |------+------+------+------+------+------|   -   |    |   =   |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |//LOWR|  ]   |
+ * |------+------+------+------+------+------|   `   |    |   ]   |------+------+------+------+------+------|
+ * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |//LOWR|RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LALT | LGUI | Space| /BackSP /       \Enter \  | RGUI |   `  | RAISE|
+ *                   |-/LCTL| LALT | LGUI | / Space /       \Enter \  | RGUI |-/RCTL|   =  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS, \
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, \
   KC_LCTRL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    LT(RAISE, KC_SCLN), KC_QUOT, \
-  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_MINS, KC_EQL,  KC_N,    KC_M,    KC_COMM, KC_DOT,  LT(LOWER, KC_SLSH), KC_RBRC, \
-                             KC_LALT, KC_LGUI, KC_SPC,  KC_BSPC, KC_ENT,  KC_RGUI, KC_GRV,  RAISE \
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_GRV,  KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  LT(LOWER, KC_SLSH), KC_RSFT, \
+                  LCTL_T(KC_MINS),KC_LALT,KC_LGUI,LSFT_T(KC_SPC),KC_ENT,  KC_RGUI, RCTL_T(KC_MINS),KC_EQL \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |   k  |      |      |                    |      |   7  |   8  |   9  |   *  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |   h  |   j  |   l  |      |-------.    ,-------|   ^  |   4  |   5  |   6  |   ]  |      |
- * |------+------+------+------+------+------|   `   |    |   `   |------+------+------+------+------+------|
+ * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|   ]  |   1  |   2  |   3  |      |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |      | /BackSP /       \      \  |   0  |   E  |   Q  |
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  \
   _______, _______, _______, KC_K,    _______, _______,                   _______, KC_7,    KC_8,    KC_9,    KC_ASTR, KC_F12,  \
   _______, _______, KC_H,    KC_J,    KC_L,    _______,                   KC_CIRC, KC_4,    KC_5,    KC_6,    KC_RBRC, _______, \
-  _______, _______, _______, _______, _______, _______, KC_GRV,  KC_GRV,  KC_RBRC, KC_1,    KC_2,    KC_3,    XXXXXXX, KC_RSFT, \
+  _______, _______, _______, _______, _______, _______, _______, _______, KC_RBRC, KC_1,    KC_2,    KC_3,    XXXXXXX, KC_RSFT, \
                              _______, _______, _______, KC_BSPC, _______, KC_0,    KC_ENT,  KC_Q \
 ),
 /* RAISE
