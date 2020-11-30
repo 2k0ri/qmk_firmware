@@ -35,25 +35,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  \   |
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  ]   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  [   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |LCTRL |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |;/RISE|  '   |
- * |------+------+------+------+------+------|   `   |    |   ]   |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |//LOWR|RShift|
+ * |LCTRL |A/RISE|   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |;/RISE|  '   |
+ * |------+------+------+------+------+------|   `   |    |   \   |------+------+------+------+------+------|
+ * |LShift|Z/LOWR|   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |//LOWR|RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |-/LCTL| LALT | LGUI | / Space /       \Enter \  | RGUI |-/RCTL|   =  |
+ *                   |-/LCTL| LALT | LGUI | / Space /       \Enter \  | RGUI |-/RALT|   =  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 
  [_QWERTY] = LAYOUT( \
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_RBRC, \
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, \
-  KC_LCTRL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    LT(RAISE, KC_SCLN), KC_QUOT, \
-  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_GRV,  KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  LT(LOWER, KC_SLSH), KC_RSFT, \
-                  LCTL_T(KC_MINS),KC_LALT,KC_LGUI,LSFT_T(KC_SPC),KC_ENT,  KC_RGUI, RCTL_T(KC_MINS),KC_EQL \
+  KC_LCTRL, LT(RAISE,KC_A),   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    LT(RAISE, KC_SCLN), KC_QUOT, \
+  KC_LSFT,  LT(LOWER,KC_Z),   KC_X,    KC_C,    KC_V,    KC_B,    KC_GRV, KC_BSLS, KC_N,    KC_M,    KC_COMM, KC_DOT,  LT(LOWER, KC_SLSH), KC_RSFT, \
+                  LCTL_T(KC_MINS),KC_LALT,KC_LGUI,KC_SPC,KC_ENT,  KC_RGUI,RALT_T(KC_MINS),KC_EQL \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|   ]  |   1  |   2  |   3  |      |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /BackSP /       \      \  |   0  |   E  |   Q  |
+ *                   |      |      |      | /BackSP /       \      \  |   0  |   E  |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -74,33 +74,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, KC_K,    _______, _______,                   _______, KC_7,    KC_8,    KC_9,    KC_ASTR, KC_F12,  \
   _______, _______, KC_H,    KC_J,    KC_L,    _______,                   KC_CIRC, KC_4,    KC_5,    KC_6,    KC_RBRC, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, KC_RBRC, KC_1,    KC_2,    KC_3,    XXXXXXX, KC_RSFT, \
-                             _______, _______, _______, KC_BSPC, _______, KC_0,    KC_ENT,  KC_Q \
+                             _______, _______, _______, KC_BSPC, _______, KC_0,    KC_E,    _______ \
 ),
 /* RAISE
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |ADJUST|      |      |      |      |      |                    |      |      |      |      |      | RESET|
+ * |ADJUST|      |      |      |      |      |                    |      |      | WAKE | SLEEP| POWER| RESET|
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | Lclk | MsUp | Rclk |WhlUp |                    |      | PGUP |  Up  | PGDN |      |      |
+ * |T/CtSf|      | Lclk | MsUp | Rclk |WhlUp |                    |      | PGUP |  Up  | PGDN |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      | VolUp|MsLeft|MsDown|MsRght|WhlDwn|-------.    ,-------|      | Left | Down |Right |      |      |
- * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
+ * |------+------+------+------+------+------|       |    |]/CtAlt|------+------+------+------+------+------|
  * |      | VolDn| Prev | Play | Next | Mute |-------|    |-------|      | HOME | ESC  | END  |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      | Lclk | Rclk | /BackSP /       \      \  |      |      |      |
+ *                   |DspSlp|Lclk/A|Rclk/G| /BackSP /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 
 [_RAISE] = LAYOUT( \
-  ADJUST,  _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, RESET,   \
-  _______, _______, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U,                     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______, \
+  ADJUST,  _______, _______, _______, _______, _______,                     _______, _______, KC_WAKE, KC_SLEP, KC_PWR, RESET,   \
+  C_S_T(KC_TAB), _______, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U,                     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______, \
   _______, KC_VOLU, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,                     _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, _______, \
-  _______, KC_VOLD, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,  _______, _______,  _______, KC_HOME, KC_ESC,  KC_END,  _______, _______, \
-                             _______, KC_BTN1, KC_BTN2,  KC_BSPC, _______,  _______, _______, _______ \
+  _______, KC_VOLD, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,  _______, MT(MOD_RCTL|MOD_RALT, KC_RBRC),  _______, KC_HOME, KC_ESC,  KC_END,  _______, _______, \
+  C(S(KC_SLEP)), LALT_T(KC_BTN1), LGUI_T(KC_BTN2),  KC_BSPC, _______,  _______, _______, _______ \
 ),
 /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |                    |      |      |      |      |      | POWER |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
   [_ADJUST] = LAYOUT( \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PWR, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD,\
@@ -150,12 +150,12 @@ const char *read_layer_state(void);
 const char *read_logo(void);
 void set_keylog(uint16_t keycode, keyrecord_t *record);
 const char *read_keylog(void);
-const char *read_keylogs(void);
+//const char *read_keylogs(void);
 
-// const char *read_mode_icon(bool swap);
-// const char *read_host_led_state(void);
-// void set_timelog(void);
-// const char *read_timelog(void);
+//const char *read_mode_icon(bool swap);
+//const char *read_host_led_state(void);
+void set_timelog(void);
+const char *read_timelog(void);
 
 void matrix_scan_user(void) {
    iota_gfx_task();
@@ -166,10 +166,10 @@ void matrix_render_user(struct CharacterMatrix *matrix) {
     // If you want to change the display of OLED, you need to change here
     matrix_write_ln(matrix, read_layer_state());
     matrix_write_ln(matrix, read_keylog());
-    matrix_write_ln(matrix, read_keylogs());
+    //matrix_write_ln(matrix, read_keylogs());
     //matrix_write_ln(matrix, read_mode_icon(keymap_config.swap_lalt_lgui));
     //matrix_write_ln(matrix, read_host_led_state());
-    //matrix_write_ln(matrix, read_timelog());
+    matrix_write_ln(matrix, read_timelog());
   } else {
     matrix_write(matrix, read_logo());
   }
