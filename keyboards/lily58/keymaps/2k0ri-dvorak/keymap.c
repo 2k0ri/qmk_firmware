@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   `   |    |   \   |------+------+------+------+------+------|
  * |LShift|;/LOWR|   Q  |   J  |   K  |   X  |-------|    |-------|   B  |   M  |   W  |   V  |Z/LOWR|RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |[/LCTL| LALT | LGUI | / Space /       \Enter \  | RGUI |[/RALT|   ]  |
+ *                   |[/LCTL| LALT | LGUI | / SandS /       \Enter \  | RGUI |[/RALT|   ]  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   LT(RAISE,KC_QUOT),KC_COMM, KC_DOT,  KC_P,    KC_Y,                     KC_F,    KC_G,    KC_C,    KC_R,    KC_L,           KC_SLSH, \
   KC_LCTRL, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                     KC_D,    KC_H,    KC_T,    KC_N,    LT(RAISE, KC_S),KC_MINS, \
   KC_LSFT,  LT(LOWER,KC_SCLN),KC_Q,    KC_J,    KC_K,    KC_X,    KC_GRV, KC_BSLS, KC_B,    KC_M,    KC_W,    KC_V,    LT(LOWER, KC_Z),KC_RSFT, \
-                  LCTL_T(KC_LBRC),KC_LALT,KC_LGUI,KC_SPC,KC_ENT,  KC_RGUI,RALT_T(KC_LBRC),KC_RBRC \
+  LCTL_T(KC_LBRC),KC_LALT,KC_LGUI,SFT_T(KC_SPC),KC_ENT,  KC_RGUI,RALT_T(KC_LBRC),KC_RBRC \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
