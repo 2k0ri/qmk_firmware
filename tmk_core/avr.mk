@@ -234,6 +234,9 @@ endef
 avrdude: $(BUILD_DIR)/$(TARGET).hex check-size cpfirmware
 	$(call EXEC_AVRDUDE)
 
+avrdude-wsl: $(BUILD_DIR)/$(TARGET).hex check-size cpfirmware
+	util/avrdude.sh $(BUILD_DIR)/$(TARGET).hex
+
 avrdude-loop: $(BUILD_DIR)/$(TARGET).hex check-size cpfirmware
 	while true; do \
 		$(call EXEC_AVRDUDE) ; \
