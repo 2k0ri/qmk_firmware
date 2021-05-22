@@ -28,6 +28,8 @@ enum custom_keycodes {
   LOWER,
   RAISE,
   ADJUST,
+  // lang
+  M_ZKHK,
 };
 
 
@@ -86,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|       |    |]/CtAlt|------+------+------+------+------+------|
  * |      | VolDn| Prev | Play | Next | Mute |-------|    |-------|      | HOME | ESC  | END  |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |DspSlp|Lclk/A|Rclk/G| /BackSP /       \      \  |      |      |      |
+ *                   |      |Lclk/A|Rclk/G| /BackSP /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -96,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   C_S_T(KC_TAB), _______, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U,                     _______, KC_PGUP, KC_UP,   KC_PGDN, _______, _______, \
   _______, KC_VOLU, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,                     _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, _______, \
   _______, KC_VOLD, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,  _______, MT(MOD_RCTL|MOD_RALT, KC_RBRC),  _______, KC_HOME, KC_ESC,  KC_END,  _______, _______, \
-  C(S(KC_SLEP)), LALT_T(KC_BTN1), LGUI_T(KC_BTN2),  KC_BSPC, _______,  _______, _______, _______ \
+  _______, LALT_T(KC_BTN1), LGUI_T(KC_BTN2),  KC_BSPC, _______,  _______, _______, _______ \
 ),
 /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -231,13 +233,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
       break;
     case ADJUST:
-        if (record->event.pressed) {
-          layer_on(_ADJUST);
-        } else {
-          layer_off(_ADJUST);
-        }
-        return false;
-        break;
+      if (record->event.pressed) {
+        layer_on(_ADJUST);
+      } else {
+        layer_off(_ADJUST);
+      }
+      return false;
+      break;
   }
   return true;
 }
